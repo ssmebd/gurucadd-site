@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="build" content="17">
+<meta name="build" content="18">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="GuruCADD: production drawings, conceptual sales drawings, light gauge modular building design and CAD-to-ERP integration for fabric structures and steel fabricators. Based in Khulna, Bangladesh.">
 <meta property="og:title" content="GuruCADD | Designing Excellence">
@@ -384,6 +384,28 @@ footer{background:#06122d}
 .case .pic.plan{background:#fff;padding:14px;display:grid;place-items:center}
 .case .pic.plan img{aspect-ratio:auto;object-fit:contain;max-height:300px;width:100%;height:auto}
 .avatar{overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.tfsec{background:radial-gradient(900px 420px at 90% 0%,rgba(56,189,248,.2),transparent 60%),linear-gradient(160deg,#0f2a5c,#081a3d);color:var(--on-navy)}
+.tfsec .kicker{color:var(--amber)}
+.tfgrid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.tft{display:grid;gap:20px;min-width:0}.tft p{color:var(--on-navy-2);font-size:1.05rem}
+.tfl{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.tfl li{display:grid;gap:2px;padding-left:34px;position:relative}
+.tfl li::before{content:"";position:absolute;left:0;top:3px;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#38bdf8,#22c55e)}
+.tfl li::after{content:"";position:absolute;left:7px;top:8px;width:8px;height:4px;border-left:2.5px solid #04213a;border-bottom:2.5px solid #04213a;transform:rotate(-45deg)}
+.tfl b{font-weight:800}.tfl span{color:var(--on-navy-2);font-size:.95rem}
+.tfc{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:6px}.tfc .link-arrow{color:var(--amber)}
+.tfm{background:#fff;color:#0f172a;border-radius:22px;padding:18px;box-shadow:0 30px 80px rgba(0,0,0,.4);display:grid;gap:12px;min-width:0}
+.tfm-h{display:flex;align-items:center;gap:10px;font-size:1.05rem}.tfm-h img{border-radius:7px}
+.tfm-live{margin-left:auto;font:700 .78rem var(--f-body);color:#16a34a;display:inline-flex;align-items:center;gap:6px}.tfm-live i{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.2)}
+.tfm-s{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.tfm-s div{background:#f3f6fc;border-radius:12px;padding:10px;display:grid}.tfm-s b{font-size:1.5rem;font-weight:900;color:#0f2a5c;line-height:1}.tfm-s span{font-size:.72rem;color:#53627c;font-weight:600}
+.tfm-r{display:grid;grid-template-columns:1fr auto;gap:6px 10px;align-items:center;padding:10px 12px;border:1px solid #e2e8f3;border-radius:12px;font-size:.88rem;font-weight:700}
+.tfm-r em{font:800 .66rem var(--f-body);font-style:normal;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.tfm-r em.p{background:#dbeafe;color:#1d4ed8}.tfm-r em.r{background:#fef3c7;color:#92400e}.tfm-r em.d{background:#dcfce7;color:#166534}.tfm-r em.t{background:#e5e7eb;color:#374151}
+.tfm-r u{grid-column:1/-1;display:block;height:8px;border-radius:4px;background:#eef2f9;position:relative;text-decoration:none}
+.tfm-r u::after{content:"";position:absolute;left:var(--a);width:var(--w);top:0;bottom:0;border-radius:4px;background:linear-gradient(90deg,#38bdf8,#1d5fd1)}.tfm-r u.g::after{background:linear-gradient(90deg,#22c55e,#16a34a)}
+.tfm-f{font-size:.74rem;color:#64748b;text-align:center}
+@media (max-width:900px){.tfgrid{grid-template-columns:1fr;gap:32px}.tfm-s{grid-template-columns:1fr 1fr}}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
 .rv.in{opacity:1;transform:none}
 .dark-toggle{display:none}
@@ -393,14 +415,14 @@ footer{background:#06122d}
 <div class="util">
   <div class="wrap">
     <div class="contacts"><span>Call <b>+880 1711 902929</b></span><span>Email <b>info@gurucadd.com</b></span></div>
-    <span class="loc">Drawing office · Khulna, Bangladesh · English-speaking team</span><span id="build" class="bld">Build 17</span>
+    <span class="loc">Drawing office · Khulna, Bangladesh · English-speaking team</span><span id="build" class="bld">Build 18</span>
   </div>
 </div>
 <header>
   <div class="wrap nav">
     <a class="logo" href="#top" aria-label="GuruCADD home"><img src="images/logo-white.png" width="421" height="120" alt="GuruCADD, Designing Excellence"></a>
     <nav class="links" aria-label="Main">
-      <a href="#services">Services</a><a href="#gallery">Drawings</a><a href="#industries">Industries</a><a href="#cases">Case studies</a><a href="#about">About</a>
+      <a href="#services">Services</a><a href="#gallery">Drawings</a><a href="#industries">Industries</a><a href="#cases">Case studies</a><a href="#taskflow">TaskFlow</a><a href="#about">About</a>
     </nav>
     <a class="btn btn-amber" href="#contact">Free quote</a>
   </div>
@@ -590,6 +612,32 @@ footer{background:#06122d}
         <div class="pic photo"><img src="images/arc-brace-layout.jpg" width="1600" height="824" loading="lazy" alt="GuruCADD drawing sheet: 3D steel frame beside the arc and brace layout plan with bolted connection sections"></div>
         <div class="body"><span class="meta">Production drawing sheet</span><h3>Arc &amp; brace layout</h3><p>Bay-by-bay arc and brace layout with typical connection sections and bolt specifications, alongside the 3D frame. Every package also includes an erection plan, BOM and bolt list.</p></div>
       </article>
+    </div>
+  </div>
+</section>
+
+<section id="taskflow" class="tfsec">
+  <div class="wrap tfgrid">
+    <div class="tft">
+      <span class="kicker">Project tracking</span>
+      <h2>Your project is secured with the TaskFlow tracking system</h2>
+      <p>Every drawing job we take on is tracked in TaskFlow, our own project system. You never have to chase us for an update: status, hours and deadlines are recorded as the work happens.</p>
+      <ul class="tfl">
+        <li><b>Live status on every drawing</b><span>To do, in progress, in review or completed, with start and end dates.</span></li>
+        <li><b>A weekly status report in your inbox</b><span>Completed this week, work in progress and what starts in the next three days.</span></li>
+        <li><b>Hours logged by the person who did the work</b><span>A clear record of effort for each job and drawing type.</span></li>
+        <li><b>Nothing lost</b><span>Comments, instructions and revisions stay with the job, with automatic backups.</span></li>
+      </ul>
+      <div class="tfc"><a class="btn btn-amber" href="https://taskflow.gurucadd.com/login.php?discover=1" target="_blank" rel="noopener">See how TaskFlow works</a><a class="link-arrow" href="#contact">Ask for a demo →</a></div>
+    </div>
+    <div class="tfm" aria-hidden="true">
+      <div class="tfm-h"><img src="images/taskflow-icon.png" width="28" height="28" alt=""><b>TaskFlow</b><span class="tfm-live"><i></i>Live</span></div>
+      <div class="tfm-s"><div><b>12</b><span>Open</span></div><div><b>5</b><span>In progress</span></div><div><b>3</b><span>In review</span></div><div><b>4</b><span>Done this week</span></div></div>
+      <div class="tfm-r"><span>Fabric shelter, erection set</span><em class="p">In progress</em><u style="--a:8%;--w:46%"></u></div>
+      <div class="tfm-r"><span>Gable wall detail sheets</span><em class="r">In review</em><u style="--a:22%;--w:40%"></u></div>
+      <div class="tfm-r"><span>Truss assembly with BOM</span><em class="d">Completed</em><u class="g" style="--a:0%;--w:34%"></u></div>
+      <div class="tfm-r"><span>Panel framing, module 2</span><em class="t">To do</em><u style="--a:52%;--w:42%"></u></div>
+      <div class="tfm-f">Sample view. Real projects are only visible to the people on them.</div>
     </div>
   </div>
 </section>
