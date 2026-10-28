@@ -14,3 +14,6 @@
 
 ## Build number
 Run `./bump.sh` before every commit. It writes the build number (commit count + 1) into the footer ("Build N") and a `<meta name="build">` tag, so you can see which version is live.
+
+## Pages
+`site/index.html` is the only page edited by hand. `tools/pages.py` (run by `bump.sh`) generates `services.html`, `gallery.html`, `about-us.html`, `contact-us.html` and `sitemap.xml` from it. These keep the old page addresses working in the new design.

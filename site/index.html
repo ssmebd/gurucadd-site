@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="build" content="20">
+<meta name="build" content="21">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="GuruCADD: production drawings, conceptual sales drawings, light gauge modular building design and CAD-to-ERP integration for fabric structures and steel fabricators. Based in Khulna, Bangladesh.">
 <meta property="og:title" content="GuruCADD | Designing Excellence">
 <meta property="og:description" content="CAD and steel detailing for fabric structures, steel frames and modular buildings.">
 <meta property="og:image" content="https://www.gurucadd.com/images/hero-render-to-site.jpg">
 <link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="canonical" href="https://www.gurucadd.com/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://www.gurucadd.com/"><meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"GuruCADD","description":"CAD and steel detailing, conceptual sales drawings, light gauge modular building design and CAD-to-ERP integration.","url":"https://www.gurucadd.com/","logo":"https://www.gurucadd.com/images/favicon.png","image":"https://www.gurucadd.com/images/hero-render-to-site.jpg","telephone":"+880 1711 902929","email":"info@gurucadd.com","address":{"@type":"PostalAddress","streetAddress":"E4 Khalishpur","addressLocality":"Khulna","postalCode":"9000","addressCountry":"BD"}}</script>
 <style>
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{margin:0}
@@ -411,6 +414,8 @@ footer{background:#06122d}
 .tfbar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#e9edf5}.tfbar i{width:11px;height:11px;border-radius:50%;background:#cbd3e2}.tfbar span{margin-left:10px;font:600 .75rem var(--f-body);color:#53627c;background:#fff;border-radius:999px;padding:4px 14px}
 .tfshot img{display:block;width:100%;height:auto}
 .tfshot figcaption{padding:12px 16px;font-size:.82rem;color:#53627c;background:#f3f6fc}
+.pgh{background:radial-gradient(900px 400px at 85% -20%,rgba(56,189,248,.22),transparent 60%),linear-gradient(160deg,#0f2a5c,#081a3d);padding-block:64px 56px}
+.pgh .wrap{display:grid;gap:14px}.pgh h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;letter-spacing:-.03em;color:#fff}.pgh p{color:var(--on-navy-2);max-width:60ch;font-size:1.08rem}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
 .rv.in{opacity:1;transform:none}
 .dark-toggle{display:none}
@@ -420,7 +425,7 @@ footer{background:#06122d}
 <div class="util">
   <div class="wrap">
     <div class="contacts"><span>Call <b>+880 1711 902929</b></span><span>Email <b>info@gurucadd.com</b></span></div>
-    <span class="loc">Drawing office · Khulna, Bangladesh · English-speaking team</span><span id="build" class="bld">Build 20</span>
+    <span class="loc">Drawing office · Khulna, Bangladesh · English-speaking team</span><span id="build" class="bld">Build 21</span>
   </div>
 </div>
 <header>
@@ -725,13 +730,13 @@ footer{background:#06122d}
       </label>
       <label class="full" for="q-msg">Project details<textarea id="q-msg" placeholder="e.g. Freestanding fabric structure, 20 m wide × 40 m long, roller shutter on one gable, guttering both sides."></textarea></label>
       <div class="full" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
-        <button class="btn btn-amber" type="submit">Prepare my request</button>
+        <button class="btn btn-amber" type="submit">Send my request</button>
         <span id="q-err" style="color:var(--blue);font-weight:600;font-size:.9rem" aria-live="polite"></span>
       </div>
       <div class="result" id="q-out" hidden>
-        <span style="font-weight:600;font-size:.9rem">Ready. Copy this and email it to info@gurucadd.com</span>
+        <span style="font-weight:600;font-size:.9rem">Your email app should open with this message ready to send to info@gurucadd.com. If it did not, use one of the buttons below.</span>
         <pre id="q-text"></pre>
-        <button type="button" class="btn btn-navy" id="q-copy" style="justify-self:start">Copy request</button>
+        <div style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn btn-navy" id="q-mail" href="mailto:info@gurucadd.com">Open email app</a><button type="button" class="btn btn-line" id="q-copy" style="color:var(--ink);border-color:var(--rule)">Copy request</button></div>
       </div>
     </form>
   </div>
@@ -814,6 +819,9 @@ $('quote').addEventListener('submit',e=>{
   $('q-err').textContent='';
   $('q-text').textContent=`Subject: Quote request – ${g('q-svc')}\n\nName: ${g('q-name')}\nCompany: ${g('q-co')||'–'}\nEmail: ${g('q-email')}\nService: ${g('q-svc')}\n\n${g('q-msg')}`;
   $('q-out').hidden=false;
+  const sub=`Quote request – ${g('q-svc')}`,body=$('q-text').textContent.replace(/^Subject:.*\n\n/,'');
+  const href='mailto:info@gurucadd.com?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(body);
+  $('q-mail').href=href;location.href=href;
 });
 $('q-copy').addEventListener('click',e=>copyText($('q-text').textContent,e.currentTarget,$('q-text')));
 
