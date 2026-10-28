@@ -11,3 +11,6 @@
 1. Upload `deploy.php` to `public_html/site-hook/deploy.php` and create `public_html/site-hook/deploy_config.php` (see the header of deploy.php).
 2. GitHub > repo Settings > Webhooks > Add: Payload URL `https://www.gurucadd.com/site-hook/deploy.php`, Content type `application/json`, same secret, event "Just the push event".
 3. Start with `'live'` = `/home/guru/public_html/preview`; switch to `/home/guru/public_html` to go live.
+
+## Build number
+Run `./bump.sh` before every commit. It writes the build number (commit count + 1) into the footer ("Build N") and a `<meta name="build">` tag, so you can see which version is live.
