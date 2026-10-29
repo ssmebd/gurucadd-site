@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="build" content="24">
+<meta name="build" content="25">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="GuruCADD: production drawings, conceptual sales drawings, light gauge modular building design and CAD-to-ERP integration for fabric structures and steel fabricators. Based in Khulna, Bangladesh.">
 <meta property="og:title" content="GuruCADD | Designing Excellence">
@@ -425,13 +425,22 @@ footer{background:#06122d}
 @media (max-width:980px){.tfpill{padding:5px}.tfpill span{display:none}.nav{gap:12px}}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
 .rv.in{opacity:1;transform:none}
+
+/* adaptive header: light glass over light sections */
+header{transition:background .25s,border-color .25s,box-shadow .25s}
+.logo .lt-logo{display:none}
+header.lt{background:rgba(255,255,255,.74);border-bottom-color:rgba(15,42,92,.12);box-shadow:0 6px 24px rgba(15,42,92,.10)}
+header.lt .logo .dk-logo{display:none}header.lt .logo .lt-logo{display:block}
+header.lt .links a{color:#3b4f6b}header.lt .links a:hover{color:#0f2a5c}
+header.lt .tfpill{color:#0f2a5c;background:rgba(15,42,92,.06);border-color:rgba(15,42,92,.16)}
+header.lt .tfpill b{color:#0f2a5c}
 .dark-toggle{display:none}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#top" aria-label="GuruCADD home"><img src="images/logo-white.png" width="421" height="120" alt="GuruCADD, Designing Excellence"></a>
+    <a class="logo" href="#top" aria-label="GuruCADD home"><img class="dk-logo" src="images/logo-white.png" width="421" height="120" alt="GuruCADD, Designing Excellence"><img class="lt-logo" src="images/logo-color.png" width="878" height="238" alt="" aria-hidden="true"></a>
     <nav class="links" aria-label="Main">
       <a href="#services">Services</a><a href="#gallery">Drawings</a><a href="#industries">Industries</a><a href="#cases">Case studies</a><a href="#taskflow">TaskFlow</a><a href="#about">About</a>
     </nav>
@@ -757,10 +766,26 @@ footer{background:#06122d}
     <div><h4>Company</h4><ul><li><a href="#about">About us</a></li><li><a href="#cases">Case studies</a></li><li><a href="#process">Our process</a></li><li><a href="#industries">Industries</a></li></ul></div>
     <div><h4>Contact</h4><ul><li>+880 1711 902929</li><li>info@gurucadd.com</li><li>E4 Khalishpur, Khulna 9000</li></ul></div>
   </div>
-  <div class="wrap fbase"><span>© 2026 GuruCADD. All rights reserved.</span><span>Khulna, Bangladesh</span><span id="build" class="bld">Build 24</span></div>
+  <div class="wrap fbase"><span>© 2026 GuruCADD. All rights reserved.</span><span>Khulna, Bangladesh</span><span id="build" class="bld">Build 25</span></div>
 </footer>
 
 <script>
+
+/* adaptive header: pick light or dark glass from what is underneath */
+(function(){
+  const h=document.querySelector('header');if(!h)return;
+  const lum=c=>{const m=c.match(/[\d.]+/g);if(!m)return null;const a=m.length>3?+m[3]:1;if(a<.5)return null;return (.2126*m[0]+.7152*m[1]+.0722*m[2])/255};
+  function check(){
+    const y=h.getBoundingClientRect().bottom+3;
+    let el=document.elementFromPoint(Math.min(innerWidth-4,innerWidth/2),y),L=null;
+    if(el&&el.closest('.on-navy,.hero,.help,footer,.plan,.case .pic'))L=0;
+    while(el&&L===null){L=lum(getComputedStyle(el).backgroundColor);el=el.parentElement}
+    h.classList.toggle('lt',L!==null&&L>.6);
+  }
+  let t=0;const run=()=>{if(t)return;t=requestAnimationFrame(()=>{t=0;check()})};
+  addEventListener('scroll',run,{passive:true});addEventListener('resize',run);matchMedia('(prefers-color-scheme:dark)').addEventListener('change',run);
+  check();setTimeout(check,400);
+})();
 const $=id=>document.getElementById(id);
 
 /* Industries */
