@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    # Copies site/ over the live web root. Only adds or overwrites files; never deletes,
+    # and site/ holds no taskflow, preview, cgi-bin or .htaccess, so those stay untouched.
+    - export DEPLOYPATH=/home/guru/public_html/
+    - /bin/cp -R site/. $DEPLOYPATH
