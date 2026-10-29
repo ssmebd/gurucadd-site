@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="build" content="42">
+<meta name="build" content="43">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="GuruCADD: production drawings, conceptual sales drawings, light gauge modular building design and CAD-to-ERP integration for fabric structures and steel fabricators. Based in Khulna, Bangladesh.">
 <meta property="og:title" content="GuruCADD | Designing Excellence">
@@ -126,6 +126,8 @@ section{padding-block:88px}
 .cards .card{grid-column:span 2}
 .cards .card:nth-child(n+4){grid-column:span 3}
 .cards .card:nth-child(n+4) .pic{aspect-ratio:16/8}
+.cards .card:nth-child(n+6){grid-column:span 2}
+.cards .card:nth-child(n+6) .pic{aspect-ratio:16/10}
 .card{background:var(--bg);border:1px solid var(--rule);display:grid;grid-template-rows:auto 1fr;transition:border-color .15s,transform .15s;min-width:0}
 .card:hover{border-color:var(--blue);transform:translateY(-3px)}
 .card .pic{background:#FFFFFF;aspect-ratio:16/10;max-width:100%;position:relative;overflow:hidden;border-bottom:1px solid var(--rule)}
@@ -454,7 +456,7 @@ mask-image:linear-gradient(to right,transparent 0,#000 34%),linear-gradient(to b
 </style>
 </head>
 <body>
-<span id="build" class="bld">Ver 0.42.0</span>
+<span id="build" class="bld">Ver 0.43.0</span>
 <header>
   <div class="wrap nav">
     <a class="logo" href="#top" aria-label="GuruCADD home"><img class="dk-logo" src="images/logo-white.png" width="421" height="120" alt="GuruCADD, Designing Excellence"><img class="lt-logo" src="images/logo-color.png" width="878" height="238" alt="" aria-hidden="true"></a>
@@ -558,6 +560,42 @@ mask-image:linear-gradient(to right,transparent 0,#000 34%),linear-gradient(to b
             <ul><li>Module and framing layouts</li><li>Wall, floor and roof panel drawings</li><li>Stud, track and joist cut lists</li><li>Opening, connection and bracing details</li><li>3D model in .ifc</li><li>Roll-former machine files to suit your line</li></ul>
             <h5>Our strength</h5>
             <ul class="str"><li>Panelised for fast factory assembly</li><li>Material lists ready for your ERP</li><li>Transport and lifting planned per module</li></ul>
+          </details>
+        </div>
+      </article>
+      <article class="card">
+        <div class="pic contain"><span class="tag">Arch fabric</span><img src="images/covered-shelter.jpg" width="1400" height="654" loading="lazy" alt="3D model of a long arched steel structure for a fabric cover"></div>
+        <div class="body">
+          <h3>Arch Fabric Steel Structure</h3>
+          <p>Arched steel frame and fabric cover design, detailed for fabrication and quick on-site erection.</p>
+          <details><summary>Package &amp; strengths</summary>
+            <ul><li>Arc, brace and purlin layouts</li><li>Erection plan and assembly layouts</li><li>Part drawings and bolt lists</li><li>Fabric cover and fixing details</li><li>NC1 files and 3D models</li></ul>
+            <h5>Our strength</h5>
+            <ul class="str"><li>Accurate drawings, on-time delivery</li><li>Optimum use of feed material</li><li>Easy on-site erection</li></ul>
+          </details>
+        </div>
+      </article>
+      <article class="card">
+        <div class="pic contain"><span class="tag">Free standing</span><img src="images/fsga2423a5.jpg" width="450" height="282" loading="lazy" alt="Elevation drawing of a free standing steel gable structure"></div>
+        <div class="body">
+          <h3>Free Standing Steel Structure</h3>
+          <p>Gable and portal frame buildings, drawn and detailed ready for the workshop.</p>
+          <details><summary>Package &amp; strengths</summary>
+            <ul><li>General arrangement and elevations</li><li>Frame, truss and connection details</li><li>Plate and part drawings</li><li>Bolt lists and material schedules</li><li>3D files in .step / .ifc</li></ul>
+            <h5>Our strength</h5>
+            <ul class="str"><li>Shop-ready detailing</li><li>Handling and transport considered</li><li>Material lists ready for your ERP</li></ul>
+          </details>
+        </div>
+      </article>
+      <article class="card">
+        <div class="pic contain"><span class="tag">Equipment</span><img src="images/truss.jpg" width="365" height="229" loading="lazy" alt="Part drawing of a steel frame component with parts list"></div>
+        <div class="body">
+          <h3>Agricultural Equipment</h3>
+          <p>3D modelling and manufacturing drawings for agricultural and farm equipment, from concept to workshop.</p>
+          <details><summary>Package &amp; strengths</summary>
+            <ul><li>Parametric 3D models and assemblies</li><li>Manufacturing and part drawings</li><li>Bills of materials</li><li>Concept and presentation views</li></ul>
+            <h5>Our strength</h5>
+            <ul class="str"><li>Design for manufacture</li><li>Quick revisions as the design develops</li><li>Drawings your workshop can build from</li></ul>
           </details>
         </div>
       </article>
