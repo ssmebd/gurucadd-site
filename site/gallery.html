@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="build" content="25">
+<meta name="build" content="26">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Real production, conceptual and modular drawing sheets from GuruCADD projects.">
 <meta property="og:title" content="Drawing samples | GuruCADD">
@@ -502,7 +502,7 @@ header.lt .tfpill b{color:#0f2a5c}
     <div><h4>Company</h4><ul><li><a href="index.html#about">About us</a></li><li><a href="index.html#cases">Case studies</a></li><li><a href="index.html#process">Our process</a></li><li><a href="index.html#industries">Industries</a></li></ul></div>
     <div><h4>Contact</h4><ul><li>+880 1711 902929</li><li>info@gurucadd.com</li><li>E4 Khalishpur, Khulna 9000</li></ul></div>
   </div>
-  <div class="wrap fbase"><span>© 2026 GuruCADD. All rights reserved.</span><span>Khulna, Bangladesh</span><span id="build" class="bld">Build 25</span></div>
+  <div class="wrap fbase"><span>© 2026 GuruCADD. All rights reserved.</span><span>Khulna, Bangladesh</span><span id="build" class="bld">Build 26</span></div>
 </footer>
 
 <script>
@@ -518,6 +518,14 @@ header.lt .tfpill b{color:#0f2a5c}
     while(el&&L===null){L=lum(getComputedStyle(el).backgroundColor);el=el.parentElement}
     h.classList.toggle('lt',L!==null&&L>.6);
   }
+  /* let a dark first section run underneath the glass header so no white shows above it */
+  const f=document.querySelector('main>*');let base=null;
+  function under(){
+    if(!f||!f.matches('.hero,.on-navy'))return;
+    if(base===null){f.style.paddingTop='';base=parseFloat(getComputedStyle(f).paddingTop)||0}
+    const hh=h.offsetHeight;h.style.marginBottom=(-hh)+'px';f.style.paddingTop=(base+hh)+'px';
+  }
+  under();addEventListener('resize',under);addEventListener('load',()=>{under();check()});
   let t=0;const run=()=>{if(t)return;t=requestAnimationFrame(()=>{t=0;check()})};
   addEventListener('scroll',run,{passive:true});addEventListener('resize',run);matchMedia('(prefers-color-scheme:dark)').addEventListener('change',run);
   check();setTimeout(check,400);
