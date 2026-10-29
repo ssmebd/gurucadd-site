@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="build" content="30">
+<meta name="build" content="31">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="GuruCADD: production drawings, conceptual sales drawings, light gauge modular building design and CAD-to-ERP integration for fabric structures and steel fabricators. Based in Khulna, Bangladesh.">
 <meta property="og:title" content="GuruCADD | Designing Excellence">
@@ -87,7 +87,8 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:15;background:va
 .hero .wrap{position:relative;z-index:1;padding-block:64px 44px;display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:end}
 .hero-copy{display:grid;gap:20px;min-width:0}
 .hero-side{display:grid;gap:24px;min-width:0}
-.hero h1{font-size:clamp(3rem,6.4vw,5.6rem);font-weight:800}
+.hero h1{font-size:clamp(2.2rem,3.9vw,3.5rem);font-weight:800;line-height:1.08}
+.hero h1 em{display:block}
 .hero h1 em{font-style:normal;color:var(--amber)}
 .hero .lead{font-size:1.1rem;color:var(--on-navy-2);max-width:50ch}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
@@ -313,7 +314,7 @@ header{background:rgba(8,26,61,.55);backdrop-filter:blur(18px) saturate(1.6);-we
 /* hero */
 .hero{background:radial-gradient(1000px 500px at 85% -10%,rgba(56,189,248,.22),transparent 60%),linear-gradient(160deg,#0f2a5c,#081a3d 70%)}
 .hero::after{background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px}
-.hero h1{font-size:clamp(2.6rem,5.6vw,4.8rem);font-weight:900;letter-spacing:-.035em;line-height:1.02}
+.hero h1{font-size:clamp(2.2rem,3.9vw,3.5rem);font-weight:900;letter-spacing:-.035em;line-height:1.02}
 .hero h1 em{background:linear-gradient(90deg,#38bdf8,#22c55e);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero .wrap{align-items:center}
 .gantt{width:100%;display:grid;gap:10px;margin-top:10px;pointer-events:none}
@@ -434,11 +435,14 @@ header.lt .logo .dk-logo{display:none}header.lt .logo .lt-logo{display:block}
 header.lt .links a{color:#3b4f6b}header.lt .links a:hover{color:#0f2a5c}
 header.lt .tfpill{color:#0f2a5c;background:rgba(15,42,92,.06);border-color:rgba(15,42,92,.16)}
 header.lt .tfpill b{color:#0f2a5c}
+.trk{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;margin-top:6px;padding:10px 16px 10px 10px;border:1px solid rgba(255,255,255,.18);border-radius:14px;background:rgba(255,255,255,.06);max-width:max-content}
+.trk:hover{background:rgba(255,255,255,.11)}
+.trk b{display:block;font-size:.98rem}.trk small{display:block;font-size:.82rem;color:var(--on-navy-2)}
 .dark-toggle{display:none}
 </style>
 </head>
 <body>
-<span id="build" class="bld">Ver 0.30.0</span>
+<span id="build" class="bld">Ver 0.31.0</span>
 <header>
   <div class="wrap nav">
     <a class="logo" href="#top" aria-label="GuruCADD home"><img class="dk-logo" src="images/logo-white.png" width="421" height="120" alt="GuruCADD, Designing Excellence"><img class="lt-logo" src="images/logo-color.png" width="878" height="238" alt="" aria-hidden="true"></a>
@@ -454,8 +458,8 @@ header.lt .tfpill b{color:#0f2a5c}
 <div class="hero on-navy">
     <div class="wrap">
     <div class="hero-copy">
-      <span class="kicker">CAD &amp; steel detailing for fabric structures</span>
-      <h1>Drawings your shop can <em>build from</em></h1>
+      <span class="kicker">CAD, ERP &amp; production support for fabricators</span>
+      <h1>From first sketch to ERP record. <em>One team you can rely on.</em></h1>
     </div>
     <div class="hero-side">
       <p class="lead">Production drawings, conceptual sales drawings and ERP-ready product data for freestanding fabric structures, steel frames and light gauge modular buildings. One experienced team, from first sketch to on-site erection.</p>
@@ -463,6 +467,7 @@ header.lt .tfpill b{color:#0f2a5c}
         <a class="btn btn-amber" href="#contact">Get a free quote</a>
         <a class="btn btn-line" href="#services">Our services</a>
       </div>
+      <a class="trk" href="#taskflow"><img src="images/taskflow-icon.png" width="34" height="34" alt=""><span><b>Every step tracked in TaskFlow</b><small>Live status, hours logged and a weekly report →</small></span></a>
       <div class="gantt" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
     </div>
   </div>
