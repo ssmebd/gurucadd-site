@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="build" content="37">
+<meta name="build" content="38">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="GuruCADD: production drawings, conceptual sales drawings, light gauge modular building design and CAD-to-ERP integration for fabric structures and steel fabricators. Based in Khulna, Bangladesh.">
 <meta property="og:title" content="GuruCADD | Designing Excellence">
@@ -438,11 +438,19 @@ header.lt .tfpill b{color:#0f2a5c}
 .trk{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;margin-top:6px;padding:10px 16px 10px 10px;border:1px solid rgba(255,255,255,.18);border-radius:14px;background:rgba(255,255,255,.06);max-width:max-content}
 .trk:hover{background:rgba(255,255,255,.11)}
 .trk b{display:block;font-size:.98rem}.trk small{display:block;font-size:.82rem;color:var(--on-navy-2)}
+/* full-bleed hero photo, blended into the navy */
+.hero-photo{max-width:none;margin:0;padding:0}
+.hero-photo::before{display:none}
+.hero-photo img{border-radius:0;box-shadow:none;aspect-ratio:2/1;max-height:760px;object-position:50% 46%;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 30%,#000 74%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 30%,#000 74%,transparent 100%)}
+.hero-photo .ph-tag{z-index:2}
+.hero-photo .ph-right{right:max(24px,calc((100vw - 1200px)/2 + 16px));top:120px}
+.hero-photo figcaption{margin-top:-60px;position:relative;z-index:2}
+@media (max-width:760px){.hero-photo img{aspect-ratio:4/3}.hero-photo .ph-right{top:70px}}
 .dark-toggle{display:none}
 </style>
 </head>
 <body>
-<span id="build" class="bld">Ver 0.37.0</span>
+<span id="build" class="bld">Ver 0.38.0</span>
 <header>
   <div class="wrap nav">
     <a class="logo" href="#top" aria-label="GuruCADD home"><img class="dk-logo" src="images/logo-white.png" width="421" height="120" alt="GuruCADD, Designing Excellence"><img class="lt-logo" src="images/logo-color.png" width="878" height="238" alt="" aria-hidden="true"></a>
@@ -473,7 +481,7 @@ header.lt .tfpill b{color:#0f2a5c}
   <figure class="hero-photo">
     <img src="images/hero-site.jpg" width="1806" height="1540" alt="Arched steel structure erected on site against a deep blue sky, detailed by GuruCADD">
     <span class="ph-tag ph-right">Erected on site</span>
-    <figcaption><span class="wrap cap-in"><span class="kicker">From model to steel</span><span>Detailed in our office, built exactly as drawn.</span></span></figcaption>
+    <figcaption><span class="wrap cap-in"><span class="kicker">From drawing to steel</span><span>Detailed in our office, built exactly as drawn.</span></span></figcaption>
   </figure>
 </div>
 
