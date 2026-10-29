@@ -4,4 +4,5 @@ python3 tools/pages.py >/dev/null || exit 1
 N=$(( $(git rev-list --count HEAD) + 1 ))
 for f in site/*.html; do sed -i -E "s#(<span id=\"build\"[^>]*>)(Build [0-9]+|Ver 0\.[0-9]+\.0)#\1Ver 0.$N.0#" "$f"; done
 for f in site/*.html; do sed -i -E "s#(<meta name=\"build\" content=\")[0-9]+#\1$N#" "$f"; done
+for f in site/*.html; do sed -i -E "s#(hero-site\.webp\?v=)[0-9]+#\1$N#" "$f"; done
 echo $N
